@@ -83,9 +83,8 @@
             do
             {
                 Console.Write("Do ilu punktów chcesz zagrać?: ");
-                string howManyPoints = Console.ReadLine();
-
-                if (!int.TryParse(howManyPoints, out pointsToWin) || pointsToWin <= 0)
+                
+                if (!int.TryParse(Console.ReadLine(), out pointsToWin) || pointsToWin <= 0)
                 {
                     Console.WriteLine("Nieprawidłowy wybór. Podaj dodatnią liczbę całkowitą.");
                     Console.WriteLine();
@@ -98,12 +97,11 @@
         }
         static int IsCorrectSymbolInput()
         {
-            string playerChoice;
             int playerSymbol;
             do
             {
                 Console.Write("Wybierz swój symbol (1 - Kamień, 2 - Papier, 3 - Nożyce): ");
-                if ((!int.TryParse(playerChoice = Console.ReadLine(), out playerSymbol)) || playerSymbol < 1 || playerSymbol > 3)
+                if ((!int.TryParse(Console.ReadLine(), out playerSymbol)) || playerSymbol < 1 || playerSymbol > 3)
                 {
                     Console.WriteLine("Nieprawidłowy wybór. Masz do wyboru: (1 - Kamień, 2 - Papier, 3 - Nożyce).");
                     Console.WriteLine();
